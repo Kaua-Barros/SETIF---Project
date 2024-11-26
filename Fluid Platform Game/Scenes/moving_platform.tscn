@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwu4dab4eaugl"]
+
+[ext_resource type="Script" path="res://Scripts/moving_platform.gd" id="1_pangm"]
+[ext_resource type="Texture2D" uid="uid://chy8j62paw164" path="res://Sprites/groundTilemap_64px.png" id="2_frmgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l34vv"]
+size = Vector2(64, 20)
+
+[node name="moving_platform" type="Node2D"]
+script = ExtResource("1_pangm")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_frmgn")
+region_enabled = true
+region_rect = Rect2(0.213879, 129.5, 63.3792, 35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_l34vv")
+one_way_collision = true
